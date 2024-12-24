@@ -4,6 +4,41 @@
 
 **NOTE: This project is for educational purposes only. The code provided has not been integrated into any production system and should not be used as-is in a production environment without thorough security review and testing.**
 
+For experimental environments:
+1. In the initialization method, consider retrieving key information provided by the service provider.
+2. Simulate the server-side encryption logic.
+3. Remove any existing key information from environment variables.
+4. Allow users to use the system normally after this setup.
+
+In other words, users of this system in an experimental setting should simulate the encryption logic that would typically be performed by the service provider. This approach allows for a more realistic testing environment while maintaining the educational nature of the project.
+
+Example of simulated initialization:
+
+```python
+def simulate_provider_initialization():
+    # Simulate retrieving keys from a secure service
+    provider_keys = get_mock_provider_keys()
+    
+    # Simulate server-side encryption
+    encrypted_keys = encrypt_sensitive_data(provider_keys)
+    
+    # Remove original keys from environment
+    for key in provider_keys:
+        if key in os.environ:
+            del os.environ[key]
+    
+    # Set encrypted keys in environment
+    for key, value in encrypted_keys.items():
+        os.environ[f"ENCRYPTED_{key}"] = value
+
+    print("Simulated provider encryption completed.")
+
+# Call this function before your actual initialization
+simulate_provider_initialization()
+```
+
+This simulation helps in understanding the full lifecycle of key management and encryption in a serverless environment, while emphasizing that in a real-world scenario, these operations would be handled by the service provider's secure systems.
+
 ## Project Overview
 
 This project implements a dynamic token encryption system designed to enhance data security in serverless architectures. It includes token generation, validation, data encryption/decryption, and audit logging functionalities.
