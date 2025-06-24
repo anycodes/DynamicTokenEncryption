@@ -1,5 +1,7 @@
 # Dynamic Token Encryption System for Serverless Architectures
 
+> ⚠️ FOR EDUCATIONAL PURPOSES ONLY - This is a reference implementation for learning serverless security concepts. Production deployment requires thorough security review, proper key management integration, and code adaptation to match specific requirements and security standards.
+
 ## Important Disclaimer
 
 **NOTE: This project is for educational purposes only. The code provided has not been integrated into any production system and should not be used as-is in a production environment without thorough security review and testing.**
